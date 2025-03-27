@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help</title>
+    <link rel="stylesheet" href="support.css">
+    <style>
+        body {
+            background-color: #FEFFCC;
+        }
+    </style>
+</head>
+<body class="scrollable-page">
+    
+    <div>
+        <button class="back" type="button" onclick="window.location.href='file:///C:/Users/snehamanjuk/OneDrive/Desktop/project/website/Homepage.html';">Back</button>
+    </div>
+    <p id="support">SUPPORT</p>
+    <br>
+    <p id="short">Everything you need to know about the <i><b>product.</i></b></p>
+    <br>
+    <div id="img">
+        <img src="C:\Users\snehamanjuk\OneDrive\Desktop\project\website\Untitled design - 2025-01-22T144448.358 1.svg" alt="image"/>
+    </div>
+    <br>
+    <p id="long">Chat with the bot for quick <br>research help and insights <br>anytime you need.</p>
+    <br>
+    <div id="faq">
+        <img src="C:\Users\snehamanjuk\OneDrive\Desktop\project\website\Group 4.svg" alt="image"/>
+    </div>
+    <br>
+    <div id="arrow">
+        <img src="C:\Users\snehamanjuk\OneDrive\Desktop\project\website\Arrow 1.svg" alt="arrow"/>
+    </div>
+    <br>
+
+    <!-- Chat area -->
+    <div class="boxx">
+    <div id="chat" style="border: 1px solid #ccc; color:black; height: 327px; overflow-y: scroll;">
+        <button onclick="displayPredefinedAnswer('What is this application for?')">What is this application for?</button>
+        <button onclick="displayPredefinedAnswer('How do I create a card for a client?')">How do I create a card for a client?</button>
+        <button onclick="displayPredefinedAnswer('Where can I view client specifications?')">Where can I view client specifications?</button>
+        <button onclick="displayPredefinedAnswer('How do I store trending Instagram post ideas?')">How do I store trending Instagram post ideas?</button>
+        <button onclick="displayPredefinedAnswer('How can I find Instagram ideas for my clients?')">How can I find Instagram ideas for my clients?</button>
+        <button onclick="displayPredefinedAnswer('Where can I read expert opinions on Instagram?')">Where can I read expert opinions on Instagram?</button>
+
+    </div>
+
+    <script>
+        function displayPredefinedAnswer(question) {
+            const answers = {
+                "What is this application for?": "A: This app helps you store client specifications, manage Instagram post ideas, and get expert advice on Instagram strategies.",
+                "How do I create a card for a client?": "A: Go to the 'Client Specification' section, and select 'Create a Card' to add client details, business name, specifications, and media link.",
+                "Where can I view client specifications?": "A: You can view client specifications anytime by entering the business name in the 'Client Specifications' section.",
+                "How do I store trending Instagram post ideas?": "A: Go to the 'Archive Trends' section to store trending Instagram post ideas.",
+                "How can I find Instagram ideas for my clients?": "A: Use the 'Inspirations' section to filter and find Instagram post ideas that match your client's needs.",
+                "Where can I read expert opinions on Instagram?": "A: On the homepage, click on the posters to access expert opinions about Instagram algorithms and strategies."
+            };
+            // Append the answer below the question instead of clearing the chat
+            const chat = document.getElementById("chat");
+            const answerElement = document.createElement("p");
+            answerElement.innerHTML = answers[question];
+            chat.appendChild(answerElement);
+
+            displayUserMessage(question);
+            setTimeout(function() {
+                displayBotMessage(answers[question]);
+            }, 1000);
+        }
+
+
+    </script>
+
+</body>
+</html>

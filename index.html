@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Login_page</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            background-color: #FEFFCC;
+            margin: 0; /* Reset margin to avoid any unintended spacing */
+            padding: 0; /* Reset padding to avoid any unintended spacing */
+            font-family: Arial, sans-serif; /* Set a default font for better readability */
+        }
+    </style>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pw').value;
+
+            // Predefined credentials
+            const validEmail = 'ashish.verma@timelyai.com';
+            const validPassword = 'password123';
+
+            if (email === validEmail && password === validPassword) {
+                // Redirect to Homepage if credentials are correct
+                window.location.href = 'Homepage.html';
+            } else {
+                // Show alert for incorrect credentials
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <b> 
+         <p id="quote">Creativity never<br>runs out.</p>
+        </b></div>
+    <div class="rectangle"></div>
+    <br/>
+    <img src="Untitled%20design%20(84)%201.svg" alt="image1" height="1168.01" width="1168.01"/>
+    <br/>
+    <p id="login">LOGIN</p>
+    <br/>
+    <form onsubmit="validateLogin(event)">
+        <input type="email" id="email" name="email" placeholder="Enter your Email ID" required>
+        <br>
+        <br/>
+        <input type="password" id="pw" name="pw" placeholder="Enter your password" required>
+        <br/>
+        <br/>
+        <button type="submit" class="getstarted">Login</button>
+        <input type="reset" class="reset">
+    </form>
+</body>
+</html>
